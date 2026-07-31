@@ -68,48 +68,6 @@ const spotlightItems = [
     href: "https://github.com/Yashkumarverma623/Skin-Disease-ML",
     stack: "Python · TensorFlow · Flask API",
     desc: "CNN image classifier for 23 skin disease categories using MobileNetV2 transfer learning, Flask backend API, and a drag-and-drop web UI."
-  },
-  { 
-    name: "MoodieFoodie", 
-    img: "/project-moodiefoodie.png", 
-    href: "https://github.com/Yashkumarverma623/Moodie-Foodie",
-    stack: "Python · Django · Scikit-Learn",
-    desc: "Mood-based food recommendation app using logistic regression to optimize restaurant recommendations based on cost, rating, and distance."
-  },
-  { 
-    name: "Carl Restaurant", 
-    img: "/project-carlrestaurant.png", 
-    href: "https://github.com/Yashkumarverma623/Carl-Restaurant",
-    stack: "HTML5 · CSS3 · JS · Slick.js",
-    desc: "Multi-page responsive restaurant website built for an Asian cuisine brand, including fully structured menus and sliding promotional banners."
-  },
-  { 
-    name: "Beauty Storefront", 
-    img: "/project-beautystorefront.png", 
-    href: "https://github.com/Yashkumarverma623/Beauty-E-Commerce",
-    stack: "HTML5 · CSS3 · JavaScript",
-    desc: "Skincare storefront UI layout ('Glowing') featuring fluid product grids, responsive skincare templates, and promotional layouts."
-  },
-  { 
-    name: "HealthEdpro v1", 
-    img: "/project-healthedprov1.png", 
-    href: "https://github.com/Yashkumarverma623/HealthEdpro",
-    stack: "MERN Stack · JavaScript · MongoDB",
-    desc: "Early full-stack iteration of Health Ed Pro, establishing the foundational database scheme and API route controllers."
-  },
-  { 
-    name: "E-Commerce Page", 
-    img: "/project-ecommerce.png", 
-    href: "https://github.com/Yashkumarverma623/E-Commerce-Website",
-    stack: "HTML5 · CSS3 · JavaScript",
-    desc: "Clean static frontend template demonstrating e-commerce product listings, cart interactions, and checkout screen wireframes."
-  },
-  { 
-    name: "Visual Portfolio", 
-    img: "/project-visualportfolio.png", 
-    href: "https://github.com/Yashkumarverma623/Portfolio-Website",
-    stack: "HTML5 · CSS3 · JavaScript",
-    desc: "An earlier portfolio revision serving as a visual resume, styling typography and grid overlays with custom animation classes."
   }
 ];
 
