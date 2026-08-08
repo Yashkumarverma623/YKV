@@ -4,6 +4,7 @@ import { useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
+import TextScramble from "./TextScramble";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -85,7 +86,7 @@ export default function ExperienceSection() {
         <div className="mb-20 text-left">
           <p className="font-tech text-accent uppercase tracking-[0.3em] text-xs md:text-sm mb-3">04 // PROFESSIONAL HISTORY</p>
           <h2 className="text-5xl md:text-7xl font-display font-extrabold uppercase tracking-tighter">
-            Experience
+            <TextScramble text="Experience" />
           </h2>
           <div className="w-20 h-1 bg-accent mt-4 rounded-full" />
         </div>

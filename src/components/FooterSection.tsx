@@ -4,6 +4,7 @@ import { useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
+import TextScramble from "./TextScramble";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -47,34 +48,34 @@ export default function FooterSection() {
         
         {/* Contact info */}
         <div className="footer-item flex flex-col gap-4">
-          <p className="font-tech text-xs text-white/40 uppercase tracking-[0.25em]">01 // CONTACT DIRECT</p>
-          <div className="flex flex-col gap-2">
+          <p className="font-tech text-xs text-white/40 uppercase tracking-[0.25em]"><TextScramble text="01 // CONTACT DIRECT" /></p>
+          <div className="flex flex-col gap-2 items-start">
             <a 
               href="mailto:yashkumarverma623@gmail.com" 
               className="text-lg md:text-xl font-tech hover:text-accent transition-colors duration-300 break-all"
             >
-              yashkumarverma623@gmail.com
+              <TextScramble text="yashkumarverma623@gmail.com" />
             </a>
             <a 
               href="tel:+919142415223" 
               className="text-lg md:text-xl font-tech hover:text-accent transition-colors duration-300"
             >
-              +91 9142415223
+              <TextScramble text="+91 9142415223" />
             </a>
           </div>
         </div>
 
         {/* Social Linkages */}
         <div className="footer-item flex flex-col gap-4">
-          <p className="font-tech text-xs text-white/40 uppercase tracking-[0.25em]">02 // NETWORKS</p>
-          <div className="flex gap-6 md:flex-col md:gap-2">
+          <p className="font-tech text-xs text-white/40 uppercase tracking-[0.25em]"><TextScramble text="02 // NETWORKS" /></p>
+          <div className="flex gap-6 md:flex-col md:gap-2 items-start">
             <a 
               href="https://www.linkedin.com/in/yash-kumar-verma623" 
               target="_blank" 
               rel="noopener noreferrer" 
               className="text-lg md:text-xl font-tech hover:text-accent transition-colors duration-300"
             >
-              LinkedIn ↗
+              <TextScramble text="LinkedIn ↗" />
             </a>
             <a 
               href="https://github.com/Yashkumarverma623" 
@@ -82,20 +83,20 @@ export default function FooterSection() {
               rel="noopener noreferrer" 
               className="text-lg md:text-xl font-tech hover:text-accent transition-colors duration-300"
             >
-              GitHub ↗
+              <TextScramble text="GitHub ↗" />
             </a>
           </div>
         </div>
 
         {/* Academic status */}
         <div className="footer-item flex flex-col gap-4 md:items-end">
-          <p className="font-tech text-xs text-white/40 uppercase tracking-[0.25em]">03 // AVAILABILITY</p>
+          <p className="font-tech text-xs text-white/40 uppercase tracking-[0.25em]"><TextScramble text="03 // AVAILABILITY" /></p>
           <div className="text-left md:text-right">
             <p className="text-lg md:text-xl font-sans font-light text-white/80">
-              Graduating <strong className="font-semibold text-accent">June 2026</strong>
+              <TextScramble text="Graduating " /><strong className="font-semibold text-accent"><TextScramble text="June 2026" /></strong>
             </p>
             <p className="text-sm font-tech text-white/40 mt-1 uppercase tracking-wider">
-              Open to worldwide opportunities
+              <TextScramble text="Open to worldwide opportunities" />
             </p>
           </div>
         </div>
@@ -104,8 +105,8 @@ export default function FooterSection() {
 
       {/* Bottom copyrights */}
       <div className="footer-item flex flex-col md:flex-row justify-between items-center gap-6 mt-8 border-t border-white/5 pt-8 font-tech text-xs text-white/30 uppercase tracking-widest">
-        <div>© 2026 YASH VERMA. ALL RIGHTS RESERVED.</div>
-        <div>DESIGNED WITH PURPOSE & INTELLECT</div>
+        <div><TextScramble text="© 2026 YASH VERMA. ALL RIGHTS RESERVED." /></div>
+        <div><TextScramble text="DESIGNED WITH PURPOSE & INTELLECT" /></div>
       </div>
     </footer>
   );

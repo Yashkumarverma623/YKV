@@ -191,17 +191,6 @@ export default function Preloader() {
       '-=0.75'
     );
 
-    tl.to(
-      '.hero .divider',
-      {
-        scaleX: 1,
-        duration: 1,
-        ease: 'power4.out',
-        stagger: 0.1
-      },
-      '<'
-    );
-
     // Stagger subtitle fade-in
     tl.to(
       '.hero .hero-sub',

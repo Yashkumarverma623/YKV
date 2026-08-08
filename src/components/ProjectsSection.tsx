@@ -4,6 +4,7 @@ import { useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
+import TextScramble from "./TextScramble";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -124,7 +125,7 @@ export default function ProjectsSection() {
 
       <div className="absolute top-10 left-10 md:top-20 md:left-20 z-[30]">
         <p className="font-tech text-cyan uppercase tracking-[0.3em] text-xs md:text-sm mb-3">05 // WORK SHOWCASE</p>
-        <h2 className="text-3xl md:text-5xl font-display font-extrabold uppercase tracking-tighter">Featured Projects</h2>
+        <h2 className="text-3xl md:text-5xl font-display font-extrabold uppercase tracking-tighter"><TextScramble text="Featured Projects" /></h2>
       </div>
 
       <div className="h-[100svh] w-full flex items-end" data-cursor-text="DRAG">

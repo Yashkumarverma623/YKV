@@ -4,6 +4,8 @@ import { useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
+import TextScramble from "./TextScramble";
+import TiltCard from "./TiltCard";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -36,13 +38,14 @@ export default function EducationAndAchievements() {
       <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
         
         {/* Education Column */}
-        <div className="edu-reveal glass-card p-6 md:p-10 rounded-3xl flex flex-col justify-between border border-white/5 shadow-2xl relative overflow-hidden group">
+        <TiltCard>
+        <div className="edu-reveal glass-card p-6 md:p-10 rounded-3xl flex flex-col justify-between border border-white/5 shadow-2xl relative overflow-hidden group h-full">
           <div className="absolute top-0 right-0 w-32 h-32 bg-accent/5 rounded-full blur-[40px] pointer-events-none" />
           
           <div>
             <p className="font-tech text-accent uppercase tracking-[0.3em] text-[10px] md:text-xs mb-3">06 // ACADEMICS</p>
-            <h2 className="text-3xl lg:text-4xl font-display font-extrabold uppercase tracking-tighter border-b border-white/10 pb-4 mb-8">
-              Education
+            <h2 className="text-2xl md:text-3xl lg:text-2xl xl:text-3xl font-display font-extrabold uppercase tracking-tighter border-b border-white/10 pb-4 mb-8">
+              <TextScramble text="Education" />
             </h2>
             
             <div className="flex flex-col gap-4">
@@ -72,14 +75,16 @@ export default function EducationAndAchievements() {
             </span>
           </div>
         </div>
+        </TiltCard>
 
         {/* Achievements Column */}
-        <div className="edu-reveal glass-card p-6 md:p-10 rounded-3xl flex flex-col border border-white/5 shadow-2xl relative overflow-hidden group">
+        <TiltCard>
+        <div className="edu-reveal glass-card p-6 md:p-10 rounded-3xl flex flex-col border border-white/5 shadow-2xl relative overflow-hidden group h-full">
           <div className="absolute top-0 right-0 w-32 h-32 bg-cyan/5 rounded-full blur-[40px] pointer-events-none" />
           
           <p className="font-tech text-cyan uppercase tracking-[0.3em] text-[10px] md:text-xs mb-3">07 // MILESTONES</p>
-          <h2 className="text-3xl lg:text-4xl font-display font-extrabold uppercase tracking-tighter border-b border-white/10 pb-4 mb-8">
-            Achievements
+          <h2 className="text-2xl md:text-3xl lg:text-2xl xl:text-3xl font-display font-extrabold uppercase tracking-tighter border-b border-white/10 pb-4 mb-8">
+            <TextScramble text="Achievements" />
           </h2>
           
           <div className="flex flex-col gap-6 text-sm font-light text-white/70 leading-relaxed font-sans">
@@ -97,6 +102,7 @@ export default function EducationAndAchievements() {
             </div>
           </div>
         </div>
+        </TiltCard>
 
       </div>
     </section>
