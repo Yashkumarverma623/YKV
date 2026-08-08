@@ -114,6 +114,16 @@ export default function MenuOverlay({ isOpen, setIsOpen }: MenuOverlayProps) {
         >
           <span className="font-tech text-sm text-accent/60 tracking-wider">07 //</span> Contact
         </a>
+        <a
+          href="/Yash_Kumar_Verma_Resume.pdf"
+          download="Yash_Kumar_Verma_Resume.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={handleLinkClick}
+          className="text-accent hover:text-white hover:translate-x-2 transition-all duration-300 flex items-center gap-4 text-3xl md:text-5xl mt-2 pt-2 border-t border-accent/20 cursor-pointer"
+        >
+          <span className="font-tech text-sm text-accent/60 tracking-wider">08 //</span> Download Resume ⬇
+        </a>
       </nav>
 
       {/* Decorative details */}

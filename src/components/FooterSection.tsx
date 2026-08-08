@@ -44,7 +44,7 @@ export default function FooterSection() {
       </div>
 
       {/* Info Channels Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 mt-4 border-t border-white/10 pt-16">
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12 mt-4 border-t border-white/10 pt-16">
         
         {/* Contact info */}
         <div className="footer-item flex flex-col gap-4">
@@ -98,6 +98,22 @@ export default function FooterSection() {
             <p className="text-sm font-tech text-white/40 mt-1 uppercase tracking-wider">
               <TextScramble text="Open to worldwide opportunities" />
             </p>
+          </div>
+        </div>
+
+        {/* Resume Download */}
+        <div className="footer-item flex flex-col gap-4 md:items-end">
+          <p className="font-tech text-xs text-white/40 uppercase tracking-[0.25em]"><TextScramble text="04 // RESUME" /></p>
+          <div className="text-left md:text-right">
+            <a 
+              href="/Yash_Kumar_Verma_Resume.pdf"
+              download="Yash_Kumar_Verma_Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-lg md:text-xl font-tech text-accent hover:underline transition-all duration-300 cursor-pointer"
+            >
+              <TextScramble text="Download PDF ↗" />
+            </a>
           </div>
         </div>
 
