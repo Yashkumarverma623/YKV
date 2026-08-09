@@ -117,6 +117,7 @@ export default function SpotlightSection() {
       const anchorElement = document.createElement("a");
       anchorElement.href = item.href;
       anchorElement.target = "_blank";
+      anchorElement.rel = "noopener noreferrer";
       anchorElement.className = "block text-white opacity-0 transition-all duration-300 hover:text-accent hover:translate-x-2 cursor-pointer pointer-events-auto";
       anchorElement.style.willChange = "opacity, transform";
       
@@ -175,9 +176,14 @@ export default function SpotlightSection() {
     const stackEl = document.getElementById("spotlight-stack");
     const descTitleEl = document.getElementById("spotlight-desc-title");
     const descTextEl = document.getElementById("spotlight-desc-text");
+    const linkEl = document.getElementById("spotlight-desc-link") as HTMLAnchorElement;
     if (stackEl) stackEl.textContent = initialItem.stack;
     if (descTitleEl) descTitleEl.textContent = initialItem.name;
     if (descTextEl) descTextEl.textContent = initialItem.desc;
+    if (linkEl && initialItem.href && initialItem.href !== "#") {
+      linkEl.href = initialItem.href;
+      linkEl.textContent = initialItem.href.includes("github.com") ? "View Repository ↗" : "Visit Live Site ↗";
+    }
 
     imageElements.forEach((img) => gsap.set(img, { opacity: 0 }));
 
@@ -333,9 +339,19 @@ export default function SpotlightSection() {
             const stackEl = document.getElementById("spotlight-stack");
             const descTitleEl = document.getElementById("spotlight-desc-title");
             const descTextEl = document.getElementById("spotlight-desc-text");
+            const linkEl = document.getElementById("spotlight-desc-link") as HTMLAnchorElement;
             if (stackEl) stackEl.textContent = item.stack;
             if (descTitleEl) descTitleEl.textContent = item.name;
             if (descTextEl) descTextEl.textContent = item.desc;
+            if (linkEl) {
+              if (item.href && item.href !== "#") {
+                linkEl.href = item.href;
+                linkEl.style.display = "inline-flex";
+                linkEl.textContent = item.href.includes("github.com") ? "View Repository ↗" : "Visit Live Site ↗";
+              } else {
+                linkEl.style.display = "none";
+              }
+            }
 
             // Small text change animation pop
             gsap.fromTo("#spotlight-desc-card", 
@@ -499,12 +515,21 @@ export default function SpotlightSection() {
             <p className="font-tech text-accent uppercase tracking-[0.3em] text-xs font-semibold">05 // BENEATH & BEYOND</p>
             <div 
               id="spotlight-desc-card" 
-              className="glass-card p-8 rounded-3xl border border-white/5 shadow-2xl flex flex-col gap-4 backdrop-blur-lg"
+              className="glass-card p-8 rounded-3xl border border-white/5 shadow-2xl flex flex-col gap-4 backdrop-blur-lg pointer-events-auto"
             >
               <span id="spotlight-stack" className="font-tech text-xs text-white/50 uppercase tracking-widest leading-relaxed"></span>
               <h3 id="spotlight-desc-title" className="font-tech font-bold text-2xl text-white uppercase tracking-tight"></h3>
               <p id="spotlight-desc-text" className="font-sans text-sm text-white/70 leading-relaxed font-light"></p>
-              <div className="w-12 h-[2px] bg-accent/60 mt-2"></div>
+              <a 
+                id="spotlight-desc-link"
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-accent text-black font-tech font-bold text-xs uppercase tracking-wider rounded-xl hover:bg-white transition-all duration-300 w-max shadow-lg shadow-accent/20 cursor-pointer pointer-events-auto mt-2"
+              >
+                View Repository ↗
+              </a>
+              <div className="w-12 h-[2px] bg-accent/60 mt-1"></div>
             </div>
           </div>
           
