@@ -1,71 +1,78 @@
 "use client";
 
-import React, { useRef, useEffect } from 'react';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { useGSAP } from '@gsap/react';
+import React, { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const config = {
-  speed: 0.32,
-  arcRadius: 460,
+  arcRadius: 300,
+  speed: 0.4,
 };
 
 const spotlightItems = [
   {
     name: "MCP + GraphRAG + CDC Platform",
     img: "/project-graphrag.png",
-    href: "https://github.com/Yashkumarverma623/HyperGraph-CDC",
+    githubUrl: "https://github.com/Yashkumarverma623/HyperGraph-CDC",
+    liveUrl: "",
     stack: "PostgreSQL · Debezium · Kafka · Neo4j · Qdrant · LangGraph · MCP",
     desc: "Real-time data ingestion pipeline (<15ms database capture latency) and hybrid GraphRAG search engine under 69ms."
   },
   {
     name: "Cortex AI",
     img: "/project-cortexai.png",
-    href: "https://github.com/Yashkumarverma623/Cortex-Ai-",
+    githubUrl: "https://github.com/Yashkumarverma623/Cortex-Ai-",
+    liveUrl: "",
     stack: "Node.js · React · LangGraph.js · Redis · MongoDB · Qdrant · Microservices",
     desc: "Production-grade multi-agent AI platform orchestrating 8 specialized agents via LangGraph.js supervisor."
   },
   {
     name: "CodeLens",
     img: "/project-codelens.png",
-    href: "https://github.com/Yashkumarverma623/CodeLens-Local-Talk-to-Codebase-RAG-Engine",
+    githubUrl: "https://github.com/Yashkumarverma623/CodeLens-Local-Talk-to-Codebase-RAG-Engine",
+    liveUrl: "",
     stack: "LangChain · LangGraph · ChromaDB · Gemini · Ragas · Cross-Encoder",
     desc: "Local retrieval-augmented generation system enabling natural-language Q&A over codebases with evaluation."
   },
   {
     name: "Agent Observability Platform",
     img: "/project-agentobs.png",
-    href: "https://github.com/Yashkumarverma623/Agent-Observability-Reliability-Platform",
+    githubUrl: "https://github.com/Yashkumarverma623/Agent-Observability-Reliability-Platform",
+    liveUrl: "",
     stack: "Python · FastAPI · PostgreSQL · React · Recharts · Docker · LangChain",
     desc: "Plug-and-play Python telemetry SDK & failure classification engine detecting timeouts (>30s) and hallucinations."
   },
   { 
     name: "KrishiSetu App", 
     img: "/project-krishisetu.png", 
-    href: "https://expo.dev/accounts/yash_kumar_verma/projects/krishisetu/builds/42720153-66ab-408a-94f0-270aea220382",
+    githubUrl: "https://github.com/Yashkumarverma623/KrishisetuV1-Compiled",
+    liveUrl: "https://expo.dev/accounts/yash_kumar_verma/projects/krishisetu/builds/42720153-66ab-408a-94f0-270aea220382",
     stack: "TypeScript · React Native · TensorFlow · Expo",
     desc: "AI agri-advisory Expo app featuring crop disease detection, local weather advisories, and offline-first support."
   },
   { 
     name: "tweakcn-mcp", 
     img: "/project-tweakcn.png", 
-    href: "https://github.com/Yashkumarverma623/tweakcn-mcp",
+    githubUrl: "https://github.com/Yashkumarverma623/tweakcn-mcp",
+    liveUrl: "",
     stack: "TypeScript · MCP Protocol · Playwright",
     desc: "Published Model Context Protocol server for shadcn/ui to let AI coding agents create and inspect React UI components."
   },
   { 
     name: "Health Ed Pro", 
     img: "/project-healthedpro.png", 
-    href: "https://health-ed-pro.netlify.app",
+    githubUrl: "",
+    liveUrl: "https://health-ed-pro.netlify.app",
     stack: "MERN Stack · Gemini API · Netlify",
     desc: "Full-stack health education platform featuring Gemini API-driven learning personalization and code-splitted load speed."
   },
   { 
     name: "Skin Classifier", 
     img: "/project-skinclassifier.png", 
-    href: "https://github.com/Yashkumarverma623/skin-analysis-v2",
+    githubUrl: "https://github.com/Yashkumarverma623/skin-analysis-v2",
+    liveUrl: "",
     stack: "Python · TensorFlow · Flask API",
     desc: "CNN image classifier for 23 skin disease categories using MobileNetV2 transfer learning, Flask backend API, and a drag-and-drop web UI."
   }
@@ -78,43 +85,36 @@ export default function SpotlightSection() {
   const imageContainerRef = useRef<HTMLDivElement>(null);
   const spotlightHeaderRef = useRef<HTMLDivElement>(null);
   const titlesContainerElementRef = useRef<HTMLDivElement>(null);
-  const introTextElementsRef = useRef<(HTMLDivElement | null)[]>([]);
   const bgImgRef = useRef<HTMLDivElement>(null);
   const bgImgARef = useRef<HTMLImageElement>(null);
   const bgImgBRef = useRef<HTMLImageElement>(null);
+  const introTextElementsRef = useRef<HTMLParagraphElement[]>([]);
 
-  useGSAP(() => {
-    // Only run horizontal/bezier scroll animations on larger screens
-    if (window.innerWidth < 768) return;
-
-    if (
-      !titlesContainerRef.current || 
-      !imageContainerRef.current || 
-      !spotlightHeaderRef.current || 
-      !titlesContainerElementRef.current || 
-      !bgImgRef.current || 
-      !bgImgARef.current || 
-      !bgImgBRef.current
-    ) return;
-
+  useEffect(() => {
+    const section = sectionRef.current;
+    const spotlight = spotlightRef.current;
     const titlesContainer = titlesContainerRef.current;
     const imageContainer = imageContainerRef.current;
     const spotlightHeader = spotlightHeaderRef.current;
     const titlesContainerElement = titlesContainerElementRef.current;
-    const introTextElements = introTextElementsRef.current;
     const bgImgA = bgImgARef.current;
     const bgImgB = bgImgBRef.current;
-    const imageElements: HTMLDivElement[] = [];
-    
-    let currentActiveIndex = 0;
-    let isAActive = true;
+    const introTextElements = introTextElementsRef.current;
 
-    titlesContainer.innerHTML = '';
-    imageContainer.innerHTML = '';
+    if (!section || !spotlight || !titlesContainer || !imageContainer || !spotlightHeader || !titlesContainerElement) return;
+
+    let isAActive = true;
+    let currentActiveIndex = -1;
+
+    titlesContainer.innerHTML = "";
+    imageContainer.innerHTML = "";
+
+    const imageElements: HTMLElement[] = [];
 
     spotlightItems.forEach((item, index) => {
+      const primaryUrl = item.githubUrl || item.liveUrl || "#";
       const anchorElement = document.createElement("a");
-      anchorElement.href = item.href;
+      anchorElement.href = primaryUrl;
       anchorElement.target = "_blank";
       anchorElement.rel = "noopener noreferrer";
       anchorElement.className = "block text-white opacity-0 transition-all duration-300 hover:text-accent hover:translate-x-2 cursor-pointer pointer-events-auto";
@@ -133,7 +133,6 @@ export default function SpotlightSection() {
       imgWrapper.className = "absolute w-[350px] h-[230px] z-[5] pointer-events-none rounded-2xl overflow-hidden shadow-2xl border border-white/10";
       imgWrapper.style.willChange = "transform";
       
-      // Highlight glow on active floating card
       const glowDiv = document.createElement("div");
       glowDiv.className = "absolute inset-0 border border-accent/20 rounded-2xl glow-accent pointer-events-none";
       
@@ -170,19 +169,38 @@ export default function SpotlightSection() {
       return { x, y };
     }
 
+    function updateCardLinks(item: any) {
+      const githubEl = document.getElementById("spotlight-desc-github") as HTMLAnchorElement;
+      const liveEl = document.getElementById("spotlight-desc-live") as HTMLAnchorElement;
+
+      if (githubEl) {
+        if (item.githubUrl) {
+          githubEl.href = item.githubUrl;
+          githubEl.style.display = "inline-flex";
+        } else {
+          githubEl.style.display = "none";
+        }
+      }
+
+      if (liveEl) {
+        if (item.liveUrl) {
+          liveEl.href = item.liveUrl;
+          liveEl.style.display = "inline-flex";
+        } else {
+          liveEl.style.display = "none";
+        }
+      }
+    }
+
     // Initialize text inside dynamic panel
     const initialItem = spotlightItems[0];
     const stackEl = document.getElementById("spotlight-stack");
     const descTitleEl = document.getElementById("spotlight-desc-title");
     const descTextEl = document.getElementById("spotlight-desc-text");
-    const linkEl = document.getElementById("spotlight-desc-link") as HTMLAnchorElement;
     if (stackEl) stackEl.textContent = initialItem.stack;
     if (descTitleEl) descTitleEl.textContent = initialItem.name;
     if (descTextEl) descTextEl.textContent = initialItem.desc;
-    if (linkEl && initialItem.href && initialItem.href !== "#") {
-      linkEl.href = initialItem.href;
-      linkEl.textContent = initialItem.href.includes("github.com") ? "View Repository ↗" : "Visit Live Site ↗";
-    }
+    updateCardLinks(initialItem);
 
     imageElements.forEach((img) => gsap.set(img, { opacity: 0 }));
 
@@ -197,7 +215,6 @@ export default function SpotlightSection() {
         const progress = self.progress;
 
         if (progress <= 0.15) {
-          // Slide in Beneath & Beyond titles
           const animationProgress = progress / 0.15;
           const moveDistance = window.innerWidth * 0.5;
 
@@ -251,16 +268,12 @@ export default function SpotlightSection() {
 
           gsap.set(titlesContainer, { transform: `translateY(${currentY}px)` });
 
-          // Helper function declared inside onUpdate to sync image timings dynamically
           function getImageProgressState(index: number, overallProgress: number) {
             const anchor = anchorElements[index];
             if (!anchor) return -1;
             
             const titleRect = anchor.getBoundingClientRect();
-            // offsetTop is relative to titlesContainer top
             const titleCenterY = (anchor as HTMLElement).offsetTop + titleRect.height / 2;
-            
-            // Calculate progress value where this title is in the vertical center of the viewport
             const centerProgress = (startPosition + titleCenterY - viewportMiddle) / totalDistance;
             
             const startTime = centerProgress - 0.5 * config.speed;
@@ -279,8 +292,6 @@ export default function SpotlightSection() {
               gsap.set(img, { opacity: 0 });
             } else {
               const pos = getBezierPosition(imageProgress);
-              
-              // Angle tilt based on position
               const tilt = (imageProgress - 0.5) * 25;
               
               gsap.set(img, {
@@ -292,7 +303,6 @@ export default function SpotlightSection() {
             }
           });
 
-          // Center detection logic
           let closestIndex = 0;
           let closestDistance = Infinity;
 
@@ -308,16 +318,13 @@ export default function SpotlightSection() {
           });
           
           if (closestIndex !== currentActiveIndex) {
-            // Un-highlight previous
             if (anchorElements[currentActiveIndex]) {
               (anchorElements[currentActiveIndex] as HTMLElement).style.opacity = "0.2";
             }
-            // Highlight current
             if (anchorElements[closestIndex]) {
               (anchorElements[closestIndex] as HTMLElement).style.opacity = "1";
             }
             
-            // Double Image Crossfader
             const item = spotlightItems[closestIndex];
             if (isAActive) {
               if (bgImgB) {
@@ -334,25 +341,14 @@ export default function SpotlightSection() {
             }
             isAActive = !isAActive;
 
-            // Dynamically update floating info panel
             const stackEl = document.getElementById("spotlight-stack");
             const descTitleEl = document.getElementById("spotlight-desc-title");
             const descTextEl = document.getElementById("spotlight-desc-text");
-            const linkEl = document.getElementById("spotlight-desc-link") as HTMLAnchorElement;
             if (stackEl) stackEl.textContent = item.stack;
             if (descTitleEl) descTitleEl.textContent = item.name;
             if (descTextEl) descTextEl.textContent = item.desc;
-            if (linkEl) {
-              if (item.href && item.href !== "#") {
-                linkEl.href = item.href;
-                linkEl.style.display = "inline-flex";
-                linkEl.textContent = item.href.includes("github.com") ? "View Repository ↗" : "Visit Live Site ↗";
-              } else {
-                linkEl.style.display = "none";
-              }
-            }
+            updateCardLinks(item);
 
-            // Small text change animation pop
             gsap.fromTo("#spotlight-desc-card", 
               { x: -10, opacity: 0.6 },
               { x: 0, opacity: 1, duration: 0.4, ease: "power3.out" }
@@ -363,19 +359,21 @@ export default function SpotlightSection() {
         }
         else if (progress > 0.95) {
           spotlightHeader.style.opacity = "0";
-          gsap.set(titlesContainerElement, {
-            "--before-opacity": "0",
-            "--after-opacity": "0",
-          });
+          if (introTextElements[0]) gsap.set(introTextElements[0], { opacity: 0 });
+          if (introTextElements[1]) gsap.set(introTextElements[1], { opacity: 0 });
         }
-      },
+      }
     });
-  }, { scope: sectionRef });
+
+    return () => {
+      ScrollTrigger.getAll().forEach(t => t.kill());
+    };
+  }, []);
 
   return (
-    <div id="spotlight" ref={sectionRef} className="bg-[#070708] text-white relative z-[20] overflow-hidden w-full border-b border-white/5">
+    <div ref={sectionRef} className="relative bg-[#070708] font-sans">
       
-      {/* 1. Mobile Layout: Scrollable Cards (Hidden on Desktop) */}
+      {/* 1. Mobile Fallback Section (Hidden on Desktop) */}
       <div className="md:hidden block px-6 py-24 bg-[#070708]">
         <div className="mb-12">
           <p className="font-tech text-accent uppercase tracking-[0.25em] text-xs mb-2">05 // CASE LOGS</p>
@@ -401,16 +399,29 @@ export default function SpotlightSection() {
                 <span className="font-tech text-xs text-white/50">{item.stack}</span>
                 <p className="font-sans text-sm text-white/70 leading-relaxed mt-1">{item.desc}</p>
               </div>
-              {item.href && item.href !== "#" && (
-                <a 
-                  href={item.href} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="w-full text-center py-2.5 bg-accent/10 hover:bg-accent text-accent hover:text-black font-tech text-xs font-bold uppercase tracking-wider rounded-lg border border-accent/20 transition-all mt-2"
-                >
-                  Visit Case Studies ↗
-                </a>
-              )}
+              
+              <div className="flex flex-wrap items-center gap-3 mt-2">
+                {item.githubUrl && (
+                  <a 
+                    href={item.githubUrl} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="flex-1 min-w-[130px] text-center py-2.5 bg-accent text-black font-tech text-xs font-bold uppercase tracking-wider rounded-xl hover:bg-white transition-all shadow-md"
+                  >
+                    GitHub Repo ↗
+                  </a>
+                )}
+                {item.liveUrl && (
+                  <a 
+                    href={item.liveUrl} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="flex-1 min-w-[130px] text-center py-2.5 bg-white/10 hover:bg-white/20 text-white font-tech text-xs font-bold uppercase tracking-wider rounded-xl border border-white/20 transition-all shadow-md"
+                  >
+                    Visit Live Site ↗
+                  </a>
+                )}
+              </div>
             </div>
           ))}
         </div>
@@ -419,7 +430,6 @@ export default function SpotlightSection() {
       {/* 2. Desktop Cinematic Pin Section (Hidden on Mobile) */}
       <div className="hidden md:block">
         <section className="intro relative w-full h-screen overflow-hidden flex items-center justify-center bg-[#070708]">
-          {/* Subtle bg mesh grid */}
           <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.015)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.015)_1px,transparent_1px)] bg-[size:50px_50px] pointer-events-none" />
           <h1 className="text-[12vw] font-display font-extrabold leading-none text-white opacity-80 tracking-tighter uppercase select-none animate-pulse">
             The Lab<span className="text-accent">.</span>
@@ -508,7 +518,7 @@ export default function SpotlightSection() {
           {/* Dynamic Details Case Panel */}
           <div 
             ref={spotlightHeaderRef}
-            className="spotlight-header absolute top-[22%] left-[6%] w-[24rem] z-[25] transition-opacity duration-500 pointer-events-none flex flex-col gap-6"
+            className="spotlight-header absolute top-[20%] left-[5%] w-[26rem] z-[35] transition-opacity duration-500 pointer-events-none flex flex-col gap-6"
             style={{ opacity: '0' }}
           >
             <p className="font-tech text-accent uppercase tracking-[0.3em] text-xs font-semibold">05 // BENEATH & BEYOND</p>
@@ -519,15 +529,28 @@ export default function SpotlightSection() {
               <span id="spotlight-stack" className="font-tech text-xs text-white/50 uppercase tracking-widest leading-relaxed"></span>
               <h3 id="spotlight-desc-title" className="font-tech font-bold text-2xl text-white uppercase tracking-tight"></h3>
               <p id="spotlight-desc-text" className="font-sans text-sm text-white/70 leading-relaxed font-light"></p>
-              <a 
-                id="spotlight-desc-link"
-                href="#"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-accent text-black font-tech font-bold text-xs uppercase tracking-wider rounded-xl hover:bg-white transition-all duration-300 w-max shadow-lg shadow-accent/20 cursor-pointer pointer-events-auto mt-2"
-              >
-                View Repository ↗
-              </a>
+              
+              <div className="flex items-center gap-3 mt-2 flex-wrap">
+                <a 
+                  id="spotlight-desc-github"
+                  href="#"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 px-4 py-2.5 bg-accent text-black font-tech font-bold text-xs uppercase tracking-wider rounded-xl hover:bg-white transition-all duration-300 shadow-lg shadow-accent/20 cursor-pointer pointer-events-auto"
+                >
+                  GitHub Repo ↗
+                </a>
+                <a 
+                  id="spotlight-desc-live"
+                  href="#"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 px-4 py-2.5 bg-white/10 hover:bg-white/20 text-white border border-white/20 font-tech font-bold text-xs uppercase tracking-wider rounded-xl transition-all duration-300 shadow-lg cursor-pointer pointer-events-auto"
+                >
+                  Visit Live Site ↗
+                </a>
+              </div>
+              
               <div className="w-12 h-[2px] bg-accent/60 mt-1"></div>
             </div>
           </div>
