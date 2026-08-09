@@ -121,7 +121,7 @@ export default function SpotlightSection() {
       
       const titleElement = document.createElement("h1");
       titleElement.textContent = item.name;
-      titleElement.className = "text-5xl md:text-7xl font-display font-extrabold leading-none m-0 uppercase tracking-tighter";
+      titleElement.className = "text-5xl md:text-7xl font-tech font-bold leading-none m-0 uppercase tracking-tighter";
       
       anchorElement.appendChild(titleElement);
       
@@ -381,7 +381,7 @@ export default function SpotlightSection() {
                 </span>
               </div>
               <div className="flex flex-col gap-2">
-                <h3 className="font-display font-extrabold text-2xl uppercase tracking-tight text-white">{item.name}</h3>
+                <h3 className="font-tech font-bold text-2xl uppercase tracking-tight text-white">{item.name}</h3>
                 <span className="font-tech text-xs text-white/50">{item.stack}</span>
                 <p className="font-sans text-sm text-white/70 leading-relaxed mt-1">{item.desc}</p>
               </div>
@@ -501,7 +501,7 @@ export default function SpotlightSection() {
               className="glass-card p-8 rounded-3xl border border-white/5 shadow-2xl flex flex-col gap-4 backdrop-blur-lg"
             >
               <span id="spotlight-stack" className="font-tech text-xs text-white/50 uppercase tracking-widest leading-relaxed"></span>
-              <h3 id="spotlight-desc-title" className="font-display font-extrabold text-2xl text-white uppercase tracking-tight"></h3>
+              <h3 id="spotlight-desc-title" className="font-tech font-bold text-2xl text-white uppercase tracking-tight"></h3>
               <p id="spotlight-desc-text" className="font-sans text-sm text-white/70 leading-relaxed font-light"></p>
               <div className="w-12 h-[2px] bg-accent/60 mt-2"></div>
             </div>

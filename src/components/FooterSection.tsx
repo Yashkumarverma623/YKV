@@ -44,7 +44,7 @@ export default function FooterSection() {
       </div>
 
       {/* Info Channels Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12 mt-4 border-t border-white/10 pt-16">
+      <div className="grid grid-cols-1 md:grid-cols-[1.3fr_1fr_1fr_1fr] gap-8 md:gap-10 mt-4 border-t border-white/10 pt-16">
         
         {/* Contact info */}
         <div className="footer-item flex flex-col gap-4">
@@ -52,13 +52,14 @@ export default function FooterSection() {
           <div className="flex flex-col gap-2 items-start">
             <a 
               href="mailto:yashkumarverma623@gmail.com" 
-              className="text-lg md:text-xl font-tech hover:text-accent transition-colors duration-300 break-all"
+              className="text-base sm:text-lg md:text-lg lg:text-xl font-tech hover:text-accent transition-colors duration-300 whitespace-nowrap overflow-hidden text-ellipsis max-w-full"
+              title="yashkumarverma623@gmail.com"
             >
               <TextScramble text="yashkumarverma623@gmail.com" />
             </a>
             <a 
               href="tel:+919142415223" 
-              className="text-lg md:text-xl font-tech hover:text-accent transition-colors duration-300"
+              className="text-base sm:text-lg md:text-lg lg:text-xl font-tech hover:text-accent transition-colors duration-300"
             >
               <TextScramble text="+91 9142415223" />
             </a>
@@ -73,7 +74,7 @@ export default function FooterSection() {
               href="https://www.linkedin.com/in/yash-kumar-verma623" 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="text-lg md:text-xl font-tech hover:text-accent transition-colors duration-300"
+              className="text-base sm:text-lg md:text-lg lg:text-xl font-tech hover:text-accent transition-colors duration-300"
             >
               <TextScramble text="LinkedIn ↗" />
             </a>
@@ -81,7 +82,7 @@ export default function FooterSection() {
               href="https://github.com/Yashkumarverma623" 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="text-lg md:text-xl font-tech hover:text-accent transition-colors duration-300"
+              className="text-base sm:text-lg md:text-lg lg:text-xl font-tech hover:text-accent transition-colors duration-300"
             >
               <TextScramble text="GitHub ↗" />
             </a>
@@ -92,10 +93,10 @@ export default function FooterSection() {
         <div className="footer-item flex flex-col gap-4 md:items-end">
           <p className="font-tech text-xs text-white/40 uppercase tracking-[0.25em]"><TextScramble text="03 // AVAILABILITY" /></p>
           <div className="text-left md:text-right">
-            <p className="text-lg md:text-xl font-sans font-light text-white/80">
+            <p className="text-base sm:text-lg md:text-lg lg:text-xl font-sans font-light text-white/80">
               <TextScramble text="Graduating " /><strong className="font-semibold text-accent"><TextScramble text="June 2026" /></strong>
             </p>
-            <p className="text-sm font-tech text-white/40 mt-1 uppercase tracking-wider">
+            <p className="text-xs font-tech text-white/40 mt-1 uppercase tracking-wider">
               <TextScramble text="Open to worldwide opportunities" />
             </p>
           </div>
@@ -110,7 +111,7 @@ export default function FooterSection() {
               download="Yash_Kumar_Verma_Resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-lg md:text-xl font-tech text-accent hover:underline transition-all duration-300 cursor-pointer"
+              className="inline-flex items-center gap-2 text-base sm:text-lg md:text-lg lg:text-xl font-tech text-accent hover:underline transition-all duration-300 cursor-pointer"
             >
               <TextScramble text="Download PDF ↗" />
             </a>

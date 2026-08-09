@@ -85,7 +85,7 @@ export default function ExperienceSection() {
       <div className="max-w-6xl mx-auto relative">
         <div className="mb-20 text-left">
           <p className="font-tech text-accent uppercase tracking-[0.3em] text-xs md:text-sm mb-3">04 // PROFESSIONAL HISTORY</p>
-          <h2 className="text-5xl md:text-7xl font-display font-extrabold uppercase tracking-tighter">
+          <h2 className="text-5xl md:text-7xl font-tech font-bold uppercase tracking-tight">
             <TextScramble text="Experience" />
           </h2>
           <div className="w-20 h-1 bg-accent mt-4 rounded-full" />
@@ -113,10 +113,10 @@ export default function ExperienceSection() {
                   <div className={`inline-block font-tech text-[10px] md:text-xs font-semibold uppercase px-3 py-1 rounded-full border ${exp.badgeColor} mb-3 tracking-wider`}>
                     {exp.badge}
                   </div>
-                  <h3 className="text-2xl md:text-3xl font-display font-extrabold uppercase tracking-tight text-white group-hover:text-accent transition-colors duration-300">
+                  <h3 className="text-2xl md:text-3xl font-tech font-bold uppercase tracking-tight text-white group-hover:text-accent transition-colors duration-300">
                     {exp.company}
                   </h3>
-                  <p className="text-lg md:text-xl font-semibold mt-1 text-white/80">{exp.role}</p>
+                  <p className="text-lg md:text-xl font-tech font-semibold mt-1 text-white/80">{exp.role}</p>
                   <p className="font-tech text-xs md:text-sm text-white/40 mt-1 uppercase tracking-wider">{exp.date}</p>
                   <p className="font-tech text-xs md:text-sm text-white/40 uppercase tracking-wider">{exp.location}</p>
                 </div>

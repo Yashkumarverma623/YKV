@@ -44,7 +44,7 @@ export default function EducationAndAchievements() {
           
           <div>
             <p className="font-tech text-accent uppercase tracking-[0.3em] text-[10px] md:text-xs mb-3">06 // ACADEMICS</p>
-            <h2 className="text-2xl md:text-3xl lg:text-2xl xl:text-3xl font-display font-extrabold uppercase tracking-tighter border-b border-white/10 pb-4 mb-8">
+            <h2 className="text-2xl md:text-3xl lg:text-2xl xl:text-3xl font-tech font-bold uppercase tracking-tight border-b border-white/10 pb-4 mb-8">
               <TextScramble text="Education" />
             </h2>
             
@@ -56,7 +56,7 @@ export default function EducationAndAchievements() {
                   <img src="/university_logo.png" alt="University Logo" className="w-full h-full object-contain" />
                 </div>
                 <div>
-                  <h3 className="text-2xl md:text-3xl font-display font-bold text-white group-hover:text-accent transition-colors duration-300">
+                  <h3 className="text-2xl md:text-3xl font-tech font-bold text-white group-hover:text-accent transition-colors duration-300">
                     B.Tech in Computer Science & Engineering
                   </h3>
                 </div>
@@ -83,7 +83,7 @@ export default function EducationAndAchievements() {
           <div className="absolute top-0 right-0 w-32 h-32 bg-cyan/5 rounded-full blur-[40px] pointer-events-none" />
           
           <p className="font-tech text-cyan uppercase tracking-[0.3em] text-[10px] md:text-xs mb-3">07 // MILESTONES</p>
-          <h2 className="text-2xl md:text-3xl lg:text-2xl xl:text-3xl font-display font-extrabold uppercase tracking-tighter border-b border-white/10 pb-4 mb-8">
+          <h2 className="text-2xl md:text-3xl lg:text-2xl xl:text-3xl font-tech font-bold uppercase tracking-tight border-b border-white/10 pb-4 mb-8">
             <TextScramble text="Achievements" />
           </h2>
           
