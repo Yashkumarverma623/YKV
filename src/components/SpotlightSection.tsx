@@ -16,36 +16,37 @@ const spotlightItems = [
   {
     name: "MCP + GraphRAG + CDC Platform",
     img: "/project-graphrag.png",
-    href: "https://github.com/Yashkumarverma623",
+    href: "https://github.com/Yashkumarverma623/HyperGraph-CDC",
     stack: "PostgreSQL · Debezium · Kafka · Neo4j · Qdrant · LangGraph · MCP",
     desc: "Real-time data ingestion pipeline (<15ms database capture latency) and hybrid GraphRAG search engine under 69ms."
   },
   {
     name: "Cortex AI",
     img: "/project-cortexai.png",
-    href: "https://github.com/Yashkumarverma623",
+    href: "https://github.com/Yashkumarverma623/Cortex-Ai-",
     stack: "Node.js · React · LangGraph.js · Redis · MongoDB · Qdrant · Microservices",
     desc: "Production-grade multi-agent AI platform orchestrating 8 specialized agents via LangGraph.js supervisor."
   },
   {
     name: "CodeLens",
     img: "/project-codelens.png",
-    href: "https://github.com/Yashkumarverma623",
+    href: "https://github.com/Yashkumarverma623/CodeLens-Local-Talk-to-Codebase-RAG-Engine",
     stack: "LangChain · LangGraph · ChromaDB · Gemini · Ragas · Cross-Encoder",
     desc: "Local retrieval-augmented generation system enabling natural-language Q&A over codebases with evaluation."
   },
   {
-    name: "RAG Evaluation Tool",
-    img: "/project-rageval.png",
-    href: "https://github.com/Yashkumarverma623",
-    stack: "Python · Ragas · DeepEval · TruLens · Plotly · LangChain",
-    desc: "Standalone tool benchmarking RAG pipelines across Ragas, DeepEval, TruLens with an interactive dashboard."
+    name: "Agent Observability Platform",
+    img: "/project-agentobs.png",
+    href: "https://github.com/Yashkumarverma623/Agent-Observability-Reliability-Platform",
+    stack: "Python · FastAPI · PostgreSQL · React · Recharts · Docker · LangChain",
+    desc: "Plug-and-play Python telemetry SDK & failure classification engine detecting timeouts (>30s) and hallucinations."
   },
   { 
-    name: "KrishiSetu", 
+    name: "KrishiSetu AI", 
     img: "/project-krishisetu.png", 
     href: "https://github.com/Yashkumarverma623/KrishisetuV1-Compiled",
-    stack: "TypeScript · React Native · TensorFlow",
+    liveHref: "https://expo.dev/accounts/yash_kumar_verma/projects/krishisetu/builds/42720153-66ab-408a-94f0-270aea220382",
+    stack: "TypeScript · React Native · TensorFlow · Expo",
     desc: "AI agri-advisory Expo app featuring crop disease detection, local weather advisories, and offline-first support."
   },
   { 
@@ -65,7 +66,7 @@ const spotlightItems = [
   { 
     name: "Skin Classifier", 
     img: "/project-skinclassifier.png", 
-    href: "https://github.com/Yashkumarverma623/Skin-Disease-ML",
+    href: "https://github.com/Yashkumarverma623/skin-analysis-v2",
     stack: "Python · TensorFlow · Flask API",
     desc: "CNN image classifier for 23 skin disease categories using MobileNetV2 transfer learning, Flask backend API, and a drag-and-drop web UI."
   }

@@ -16,7 +16,7 @@ const featuredProjects = [
     image: "/project-graphrag.png",
     stack: ["PostgreSQL", "Debezium", "Apache Kafka", "Neo4j", "Qdrant", "LangGraph", "MCP"],
     liveUrl: "#",
-    githubUrl: "https://github.com/Yashkumarverma623",
+    githubUrl: "https://github.com/Yashkumarverma623/HyperGraph-CDC",
     description: "Built a real-time event-driven data pipeline achieving <15ms database capture latency and 1.1s end-to-end graph indexing turnaround. Hybrid GraphRAG search engine (<69ms) combining Gemini 2.5 Flash with Cypher graph traversals, and an MCP agent gateway over Stdio transport (<13ms overhead).",
     metrics: [
       { label: "CDC Latency", val: "<15ms" },
@@ -32,7 +32,7 @@ const featuredProjects = [
     image: "/project-cortexai.png",
     stack: ["Node.js", "React 19", "LangGraph.js", "Redis", "MongoDB", "Qdrant Cloud", "Microservices"],
     liveUrl: "#",
-    githubUrl: "https://github.com/Yashkumarverma623",
+    githubUrl: "https://github.com/Yashkumarverma623/Cortex-Ai-",
     description: "Architected a production-grade multi-agent AI platform on microservices, orchestrating 8 specialized agents via LangGraph.js (CodeGen, Tavily Search, PDF RAG, Multimodal Vision). Includes Redis sliding-window memory, S3 storage, Redis cosine-similarity semantic caching, and LLM-as-a-judge evaluation.",
     metrics: [
       { label: "Active Agents", val: "8 Autonomous" },
@@ -48,7 +48,7 @@ const featuredProjects = [
     image: "/project-codelens.png",
     stack: ["LangChain", "LangGraph", "ChromaDB", "Gemini", "Ragas", "Cross-Encoder", "Docker"],
     liveUrl: "#",
-    githubUrl: "https://github.com/Yashkumarverma623",
+    githubUrl: "https://github.com/Yashkumarverma623/CodeLens-Local-Talk-to-Codebase-RAG-Engine",
     description: "Developed a fully local retrieval-augmented generation system enabling natural-language Q&A over codebase repositories. Combines LangGraph orchestration, ChromaDB vector storage, Cross-Encoder reranking, and an automated Ragas evaluation harness (8/10 validated output score).",
     metrics: [
       { label: "Ragas Score", val: "8/10 Score" },
@@ -64,7 +64,7 @@ const featuredProjects = [
     image: "/project-agentobs.png",
     stack: ["Python", "FastAPI", "PostgreSQL", "React", "Recharts", "Docker", "LangChain"],
     liveUrl: "#",
-    githubUrl: "https://github.com/Yashkumarverma623",
+    githubUrl: "https://github.com/Yashkumarverma623/Agent-Observability-Reliability-Platform",
     description: "Engineered a plug-and-play Python instrumentation SDK for LangChain/LangGraph agents streaming trace telemetry to FastAPI with zero blocking overhead. Features a rule-based failure classification engine (>30s timeouts, loops, hallucinations) and cross-version regression alert triggers.",
     metrics: [
       { label: "Telemetry", val: "Zero Blocking" },
@@ -80,7 +80,7 @@ const featuredProjects = [
     image: "/project-rageval.png",
     stack: ["Python", "Ragas", "DeepEval", "TruLens", "Plotly", "LangChain"],
     liveUrl: "#",
-    githubUrl: "https://github.com/Yashkumarverma623",
+    githubUrl: "https://github.com/Yashkumarverma623/CodeLens-Local-Talk-to-Codebase-RAG-Engine",
     description: "Engineered a standalone benchmarking suite that runs Ragas, DeepEval, and TruLens simultaneously in isolated environments. Measures faithfulness, answer relevancy, and context recall, generating interactive Plotly dashboards to continuously benchmark RAG pipeline performance.",
     metrics: [
       { label: "Eval Frameworks", val: "Multi-Eval" },
