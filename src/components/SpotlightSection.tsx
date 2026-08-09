@@ -42,10 +42,9 @@ const spotlightItems = [
     desc: "Plug-and-play Python telemetry SDK & failure classification engine detecting timeouts (>30s) and hallucinations."
   },
   { 
-    name: "KrishiSetu AI", 
+    name: "KrishiSetu App", 
     img: "/project-krishisetu.png", 
-    href: "https://github.com/Yashkumarverma623/KrishisetuV1-Compiled",
-    liveHref: "https://expo.dev/accounts/yash_kumar_verma/projects/krishisetu/builds/42720153-66ab-408a-94f0-270aea220382",
+    href: "https://expo.dev/accounts/yash_kumar_verma/projects/krishisetu/builds/42720153-66ab-408a-94f0-270aea220382",
     stack: "TypeScript · React Native · TensorFlow · Expo",
     desc: "AI agri-advisory Expo app featuring crop disease detection, local weather advisories, and offline-first support."
   },
