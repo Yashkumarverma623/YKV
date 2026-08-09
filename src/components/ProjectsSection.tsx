@@ -80,7 +80,7 @@ const featuredProjects = [
     image: "/project-rageval.png",
     stack: ["Python", "Ragas", "DeepEval", "TruLens", "Plotly", "LangChain"],
     liveUrl: "#",
-    githubUrl: "https://github.com/Yashkumarverma623/CodeLens-Local-Talk-to-Codebase-RAG-Engine",
+    githubUrl: "https://github.com/Yashkumarverma623",
     description: "Engineered a standalone benchmarking suite that runs Ragas, DeepEval, and TruLens simultaneously in isolated environments. Measures faithfulness, answer relevancy, and context recall, generating interactive Plotly dashboards to continuously benchmark RAG pipeline performance.",
     metrics: [
       { label: "Eval Frameworks", val: "Multi-Eval" },
