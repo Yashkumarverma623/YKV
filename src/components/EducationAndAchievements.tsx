@@ -91,13 +91,19 @@ export default function EducationAndAchievements() {
             <div className="flex items-start gap-4 hover:translate-x-1 transition-all duration-300">
               <span className="font-tech text-cyan text-lg mt-0.5">✦</span>
               <p>
-                <strong className="font-semibold text-white">Hackathons:</strong> Top-3 finishes at 8+ inter-college hackathons, building and shipping functional AI/full-stack prototypes under time constraints.
+                <strong className="font-semibold text-white">Publications & Research:</strong> Co-authored a peer-reviewed academic paper (2025) on Agentic RAG for Domain-Specific Knowledge Retrieval, and authored a 60+ page technical report for a Ministry of Earth Sciences-sponsored project (SIH-25040/INCOIS).
               </p>
             </div>
             <div className="flex items-start gap-4 hover:translate-x-1 transition-all duration-300">
               <span className="font-tech text-cyan text-lg mt-0.5">✦</span>
               <p>
-                <strong className="font-semibold text-white">Research:</strong> Co-authored a peer-reviewed academic paper on agentic RAG and authored a 60+ page technical report for a Ministry of Earth Sciences-sponsored project (SIH-25040/INCOIS).
+                <strong className="font-semibold text-white">LeetCode & Problem Solving:</strong> Solved 400+ LeetCode problems, demonstrating strong data structures, algorithms, and technical problem-solving practice.
+              </p>
+            </div>
+            <div className="flex items-start gap-4 hover:translate-x-1 transition-all duration-300">
+              <span className="font-tech text-cyan text-lg mt-0.5">✦</span>
+              <p>
+                <strong className="font-semibold text-white">Hackathons & Leadership:</strong> Top-3 finishes at 8+ inter-college hackathons, building and shipping functional AI/full-stack prototypes under tight time constraints.
               </p>
             </div>
           </div>

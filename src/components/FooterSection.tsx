@@ -89,15 +89,15 @@ export default function FooterSection() {
           </div>
         </div>
 
-        {/* Academic status */}
+        {/* Academic status & Availability */}
         <div className="footer-item flex flex-col gap-4 md:items-end">
           <p className="font-tech text-xs text-white/40 uppercase tracking-[0.25em]"><TextScramble text="03 // AVAILABILITY" /></p>
           <div className="text-left md:text-right">
             <p className="text-base sm:text-lg md:text-lg lg:text-xl font-sans font-light text-white/80">
-              <TextScramble text="Graduating " /><strong className="font-semibold text-accent"><TextScramble text="June 2026" /></strong>
+              <strong className="font-semibold text-accent"><TextScramble text="Available Immediately" /></strong>
             </p>
             <p className="text-xs font-tech text-white/40 mt-1 uppercase tracking-wider">
-              <TextScramble text="Open to worldwide opportunities" />
+              <TextScramble text="Full-Time Roles | Open to Relocation" />
             </p>
           </div>
         </div>

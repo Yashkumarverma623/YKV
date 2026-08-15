@@ -8,10 +8,10 @@ import { useGSAP } from '@gsap/react';
 gsap.registerPlugin(ScrollTrigger);
 
 const ROLES = [
-  "Full-Stack Developer",
   "AI Engineer",
-  "Creative Technologist",
-  "Creative Builder",
+  "GenAI & Full-Stack Developer",
+  "LLM & RAG Architect",
+  "Autonomous Agent Systems",
 ];
 
 export default function HeroSection() {

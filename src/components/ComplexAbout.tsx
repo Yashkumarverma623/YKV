@@ -26,6 +26,7 @@ export default function ComplexAbout() {
       end: "+=1200vh",
       scrub: 1,
       pin: true,
+      refreshPriority: 10,
       onUpdate: (self) => {
         gsap.to(".wrapper-about", {
           x: `${-400 * self.progress}vw`,
@@ -146,16 +147,16 @@ export default function ComplexAbout() {
           <div className="relative text-xl md:text-3xl lg:text-4xl font-light leading-normal max-w-5xl font-sans tracking-tight bio-container">
             {/* Base Layer (Faded) */}
             <p className="text-white/20">
-              <strong className="font-semibold text-white/20">AI Engineer (GPA 7.87)</strong> specializing in LLM, RAG, and multi-agent systems — from pipeline design to deployment. Built production-grade agentic architectures using <strong className="font-semibold text-white/20">LangChain/LangGraph</strong>, vector databases, and quantitative evaluation frameworks.
+              <strong className="font-semibold text-white/20">AI Engineer (GPA 7.87)</strong> specializing in production-grade LLM systems, multi-agent RAG pipelines, and model routing. Built agentic architectures handling <strong className="font-semibold text-white/20">50K+ daily queries at p99 &lt;45ms</strong>, cutting LLM inference costs by <strong className="font-semibold text-white/20">60%</strong> across GPT-4, GPT-3.5, and fine-tuned Llama-3.1-8B.
               <br /><br />
-              Strong grounding in <strong className="font-semibold text-white/20">Python, backend systems, and full-stack integration</strong> for shipping AI features end-to-end.
+              Strong grounding in <strong className="font-semibold text-white/20">Python, LangGraph, vector databases, and full-stack integration</strong> for shipping end-to-end AI features.
             </p>
 
             {/* Reveal Layer (Full Color + Clip Path) */}
             <p className="bio-reveal text-white absolute top-0 left-0 w-full h-full" style={{ clipPath: 'polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%)' }}>
-              <strong className="font-semibold text-accent">AI Engineer (GPA <span className="stat-number" data-target="7.87">0.00</span>)</strong> specializing in LLM, RAG, and multi-agent systems — from pipeline design to deployment. Built production-grade agentic architectures using <strong className="font-semibold text-gold">LangChain/LangGraph</strong>, vector databases, and quantitative evaluation frameworks.
+              <strong className="font-semibold text-accent">AI Engineer (GPA <span className="stat-number" data-target="7.87">0.00</span>)</strong> specializing in production-grade LLM systems, multi-agent RAG pipelines, and model routing. Built agentic architectures handling <strong className="font-semibold text-gold">50K+ daily queries at p99 &lt;45ms</strong>, cutting LLM inference costs by <strong className="font-semibold text-cyan">60%</strong> across GPT-4, GPT-3.5, and fine-tuned Llama-3.1-8B.
               <br /><br />
-              Strong grounding in <strong className="font-semibold text-cyan">Python, backend systems, and full-stack integration</strong> for shipping AI features end-to-end.
+              Strong grounding in <strong className="font-semibold text-accent">Python, LangGraph, vector databases, and full-stack integration</strong> for shipping end-to-end AI features.
             </p>
           </div>
         </div>

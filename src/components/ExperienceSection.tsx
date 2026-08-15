@@ -10,30 +10,55 @@ gsap.registerPlugin(ScrollTrigger);
 
 const experiences = [
   {
-    company: "Tellis Technologies",
-    role: "Software Development Intern",
-    date: "2025",
+    company: "Stealth AI Startup",
+    role: "AI Engineer Intern",
+    date: "Feb 2026 – May 2026",
     location: "Remote",
-    badge: "Agentic AI & Docker",
+    badge: "Multi-Agent RAG & Cost Routing",
     badgeColor: "border-accent/30 text-accent bg-accent/5",
     bullets: [
-      "Built agentic AI pipelines using LangChain and LangGraph, integrating LLM-driven orchestration into production MERN applications alongside the engineering team.",
-      "Built a production-grade multi-agent system (Autonomous SWE Agent) that autonomously localizes bugs, writes patches, and iterates on real GitHub issues, benchmarked end-to-end against SWE-bench-lite.",
-      "Designed a LangGraph self-verification loop (Planner → Editor → Test Runner → Verifier) applying patches inside an isolated Docker sandbox, running the real test suite, and routing failures back to the Editor with error traces for iterative retries.",
-      "Implemented AST-level semantic retrieval using tree-sitter to extract full functions/classes (not naive text chunks), embedded via ChromaDB with Gemini embeddings for accurate issue-to-code matching."
+      "Owned a 0-to-1 multi-agent RAG pipeline in production, rebuilding retrieval with hybrid search and cross-encoder reranking; scaled to 50K+ daily queries at p99 <45ms and improved Ragas faithfulness from 0.72 to 0.91.",
+      "Cut LLM costs by 60% with an intent classifier routing queries across GPT-4, GPT-3.5, and fine-tuned Llama-3.1-8B using QLoRA/vLLM; reduced per-query cost from $0.04 to $0.016 while maintaining output quality.",
+      "Shipped production AI safety and observability with real-time PII scrubbing, prompt-injection defense, output moderation, and LangSmith tracing; blocked 99%+ adversarial inputs and lifted task completion 35% through A/B prompt testing."
+    ]
+  },
+  {
+    company: "Tellis Technologies",
+    role: "Software Development Intern",
+    date: "Sept 2025 – Jan 2026",
+    location: "Remote",
+    badge: "Autonomous SWE Agent & Sandbox",
+    badgeColor: "border-cyan/30 text-cyan bg-cyan/5",
+    bullets: [
+      "Built agentic AI pipelines using LangChain/LangGraph and a production-grade Autonomous SWE Agent that localized bugs, wrote patches, and iterated on real GitHub issues, benchmarked against SWE-bench-lite.",
+      "Designed a LangGraph self-verification loop (Planner → Editor → Test Runner → Verifier) applying patches inside an isolated Docker sandbox, running the real test suite, and routing failures back to the Editor for iterative retries.",
+      "Implemented AST-level semantic retrieval using tree-sitter to extract full functions/classes instead of naive text chunks, embedding them with ChromaDB and Gemini embeddings for accurate issue-to-code matching."
+    ]
+  },
+  {
+    company: "Luminary",
+    role: "Software Developer Intern",
+    date: "Apr 2025 – Sept 2025",
+    location: "Remote",
+    badge: "SaaS Scale & Microservices",
+    badgeColor: "border-gold/30 text-gold bg-gold/5",
+    bullets: [
+      "Architected full-stack SaaS features serving 100K+ MAU: shipped micro-frontends with Module Federation, optimistic UI, WebSocket sync, and Node.js/FastAPI services behind an API Gateway, reducing Time-to-Interactive to 1.2s and bundle size by 55%.",
+      "Redesigned an event-driven backend handling 10M+ daily events across 6 microservices using the Saga pattern, Kafka, circuit breakers, exponential backoff, and PostgreSQL read replicas with connection pooling; reduced p99 latency from 800ms to 35ms and achieved 99.95% uptime.",
+      "Built GitHub Actions CI/CD with blue-green deployments, achieved 90%+ test coverage using Vitest and Playwright E2E, and added OpenTelemetry plus Sentry observability; cut deployment time from 30min to 8min and production incidents by 80%."
     ]
   },
   {
     company: "Elite Coders",
     role: "Full Stack Development Intern",
-    date: "2025",
+    date: "Feb 2025 – Mar 2025",
     location: "Greater Noida, UP",
-    badge: "ERP Systems",
-    badgeColor: "border-gold/30 text-gold bg-gold/5",
+    badge: "School ERP Systems",
+    badgeColor: "border-white/30 text-white/80 bg-white/5",
     bullets: [
-      "Developed core modules of a School ERP system (student records, attendance, fee management) using the MERN stack for real institutional use.",
-      "Optimized MongoDB schema design and indexing on high-traffic collections, improving query performance for the ERP's reporting workflows.",
-      "Built and secured RESTful APIs with role-based access control (admin, teacher, student) for multi-tenant institutional access."
+      "Developed core School ERP modules for student records, attendance, and fee management using the MERN stack for real institutional use.",
+      "Optimized MongoDB schema design and indexing on high-traffic collections, improving query performance for ERP reporting workflows.",
+      "Built and secured RESTful APIs with role-based access control for admin, teacher, and student roles, supporting multi-tenant institutional access."
     ]
   }
 ];

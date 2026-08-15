@@ -88,7 +88,7 @@ export default function SpotlightSection() {
   const bgImgRef = useRef<HTMLDivElement>(null);
   const bgImgARef = useRef<HTMLImageElement>(null);
   const bgImgBRef = useRef<HTMLImageElement>(null);
-  const introTextElementsRef = useRef<HTMLParagraphElement[]>([]);
+  const introTextElementsRef = useRef<(HTMLDivElement | null)[]>([]);
 
   useEffect(() => {
     const section = sectionRef.current;
@@ -130,16 +130,16 @@ export default function SpotlightSection() {
       titlesContainer.appendChild(anchorElement);
 
       const imgWrapper = document.createElement("div");
-      imgWrapper.className = "absolute w-[350px] h-[230px] z-[5] pointer-events-none rounded-2xl overflow-hidden shadow-2xl border border-white/10";
+      imgWrapper.className = "absolute w-[350px] h-[230px] z-[5] pointer-events-none rounded-2xl overflow-hidden shadow-2xl border border-white/10 bg-[#080b11] p-1.5 flex items-center justify-center";
       imgWrapper.style.willChange = "transform";
       
       const glowDiv = document.createElement("div");
-      glowDiv.className = "absolute inset-0 border border-accent/20 rounded-2xl glow-accent pointer-events-none";
+      glowDiv.className = "absolute inset-0 border border-accent/20 rounded-2xl glow-accent pointer-events-none z-10";
       
       const imgElement = document.createElement("img");
       imgElement.src = item.img;
       imgElement.alt = "";
-      imgElement.className = "w-full h-full object-cover";
+      imgElement.className = "w-full h-full object-contain rounded-xl";
       
       imgWrapper.appendChild(glowDiv);
       imgWrapper.appendChild(imgElement);
@@ -204,12 +204,13 @@ export default function SpotlightSection() {
 
     imageElements.forEach((img) => gsap.set(img, { opacity: 0 }));
 
-    ScrollTrigger.create({
+    const st = ScrollTrigger.create({
       trigger: spotlightRef.current,
       start: "top top",
       end: `+=${window.innerHeight * 11}px`,
       pin: true,
       pinSpacing: true,
+      refreshPriority: 10,
       scrub: 1.2,
       onUpdate: (self) => {
         const progress = self.progress;
@@ -366,7 +367,7 @@ export default function SpotlightSection() {
     });
 
     return () => {
-      ScrollTrigger.getAll().forEach(t => t.kill());
+      st.kill();
     };
   }, []);
 
@@ -387,10 +388,10 @@ export default function SpotlightSection() {
               key={index} 
               className="glass-card p-5 rounded-2xl border border-white/5 flex flex-col gap-5"
             >
-              <div className="w-full aspect-[4/3] rounded-xl overflow-hidden relative border border-white/10">
-                <img src={item.img} alt={item.name} className="w-full h-full object-cover" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
-                <span className="absolute bottom-4 left-4 font-tech text-[10px] uppercase font-bold bg-black/50 text-accent border border-accent/30 px-3 py-1 rounded-full">
+              <div className="w-full aspect-[16/10] rounded-xl overflow-hidden relative border border-white/10 bg-[#080b11] p-1.5 flex items-center justify-center">
+                <img src={item.img} alt={item.name} className="w-full h-full object-contain rounded-lg" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none"></div>
+                <span className="absolute bottom-4 left-4 font-tech text-[10px] uppercase font-bold bg-black/70 text-accent border border-accent/30 px-3 py-1 rounded-full z-10">
                   {item.stack.split(" · ")[0]}
                 </span>
               </div>

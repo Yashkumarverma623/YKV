@@ -27,57 +27,55 @@ export default function CoolSection() {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useGSAP(() => {
-    const titles = gsap.utils.toArray<HTMLElement>('.title');
-    
+    if (!containerRef.current) return;
+    const titles = gsap.utils.toArray<HTMLElement>(containerRef.current.querySelectorAll('.title'));
+
     titles.forEach((title, index) => {
-      const chars = gsap.utils.toArray<HTMLElement>(title.querySelectorAll('.char'));
+      const titleContainer = title.querySelector<HTMLElement>('.title-container');
+      const chars = title.querySelectorAll<HTMLElement>('.char');
       
-      // Set initial Y positions based on even/odd index
+      const isOdd = index % 2 !== 0;
+      const initialX = isOdd ? -100 : 100;
+
+      // 1. Instantly set initial off-screen positions
+      if (titleContainer) {
+        gsap.set(titleContainer, { xPercent: initialX });
+      }
+
       chars.forEach((char, i) => {
-        const charInitialY = i % 2 === 0 ? -150 : 150;
-        gsap.set(char, { y: charInitialY });
+        const initialY = i % 2 === 0 ? -120 : 120;
+        gsap.set(char, { y: initialY, opacity: 0 });
       });
-      
-      const titleContainer = title.querySelector('.title-container');
-      const titleContainerInitialX = index % 2 !== 0 ? -100 : 100;
-      
-      const charCount = chars.length;
 
-      ScrollTrigger.create({
-        trigger: title,
-        start: 'top 85%',
-        end: 'top 15%',
-        scrub: 1,
-        onUpdate: (self) => {
-          // Animate title container X
-          if (titleContainer) {
-            const titleContainerX = titleContainerInitialX - self.progress * titleContainerInitialX;
-            gsap.set(titleContainer, { x: `${titleContainerX}%` });
-          }
-
-          // Animate individual characters
-          chars.forEach((char, i) => {
-            let charStaggerIndex = (index % 2 !== 0) ? (charCount - i - 1) : i;
-
-            const charStartDelay = 0.08;
-            const charTimelineSpan = 1 - charStartDelay;
-            const staggerFactor = Math.min(0.55, charTimelineSpan * 0.55);
-            const delay = charStartDelay + (charStaggerIndex / charCount) * staggerFactor;
-            const duration = charTimelineSpan - (staggerFactor * (charCount - 1)) / charCount;
-            const start = delay;
-
-            let charProgress = 0;
-            if (self.progress >= start) {
-              charProgress = Math.min(1, (self.progress - start) / duration);
-            }
-
-            const charInitialY = i % 2 === 0 ? -150 : 150;
-            const charY = charInitialY - charProgress * charInitialY;
-            gsap.set(char, { y: charY });
-          });
+      // 2. Build GSAP Timeline scrubbed to scroll position
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: title,
+          start: 'top 85%',
+          end: 'center center',
+          scrub: 1,
+          invalidateOnRefresh: true,
         }
       });
+
+      if (titleContainer) {
+        tl.to(titleContainer, {
+          xPercent: 0,
+          duration: 1,
+          ease: 'power2.out',
+        }, 0);
+      }
+
+      tl.to(chars, {
+        y: 0,
+        opacity: 1,
+        duration: 0.8,
+        stagger: isOdd ? -0.04 : 0.04,
+        ease: 'back.out(1.2)',
+      }, 0);
     });
+
+    ScrollTrigger.refresh();
   }, { scope: containerRef });
 
   return (

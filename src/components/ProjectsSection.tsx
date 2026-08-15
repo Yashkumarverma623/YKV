@@ -100,6 +100,7 @@ export default function ProjectsSection() {
       end: "+=1500vh",
       scrub: 1,
       pin: true,
+      refreshPriority: 10,
       onUpdate: (self) => {
         gsap.to(".wrapper-projects", {
           x: `${-500 * self.progress}vw`,
@@ -140,10 +141,10 @@ export default function ProjectsSection() {
             
             <div className="w-full max-w-6xl glass-card p-6 md:p-10 rounded-[2.5rem] border border-white/10 shadow-2xl relative overflow-hidden flex flex-col md:flex-row gap-8 items-center">
               {/* Image Preview */}
-              <div className="w-full md:w-1/2 h-64 md:h-[420px] rounded-2xl overflow-hidden relative border border-white/10 group shrink-0">
-                <img src={project.image} alt={project.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-                <div className="absolute top-4 left-4 font-tech text-xs text-accent uppercase tracking-widest bg-black/60 px-3 py-1 rounded-full border border-accent/30 backdrop-blur-md">
+              <div className="w-full md:w-1/2 h-64 md:h-[420px] rounded-2xl overflow-hidden relative border border-white/10 group shrink-0 bg-[#080b11] p-2 flex items-center justify-center">
+                <img src={project.image} alt={project.title} className="w-full h-full object-contain rounded-xl transition-transform duration-700 group-hover:scale-105" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none" />
+                <div className="absolute top-4 left-4 font-tech text-xs text-accent uppercase tracking-widest bg-black/70 px-3 py-1 rounded-full border border-accent/30 backdrop-blur-md z-10">
                   {project.category}
                 </div>
               </div>
